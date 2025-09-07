@@ -9,10 +9,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: url(library-bc.jpg);
+  background-size: cover;
 }
 
 h1 {
-  padding: 30px;
+  padding: 40px;
+  font-size: 50px;
 }
 
 table {
@@ -44,9 +47,10 @@ tbody tr td:last-child {
   border-bottom-right-radius: 15px;
 }
 
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
   background: rgb(237, 237, 237);
-}
+} */
+
 tbody tr:hover {
   background: rgba(186, 221, 255, 0.955);
 }
@@ -58,4 +62,29 @@ button {
   border-radius: 15px;
   border: 1px solid rgb(188, 188, 188);
   font-size: 15px;
+}
+
+button:hover {
+  background-color: rgb(125, 184, 243);
+}
+
+/* DIALOG */
+
+dialog {
+  width: 600px;
+  height: 700px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px;
+  background-color: rgb(228, 228, 228);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.4); /* voile sombre */
+  backdrop-filter: blur(2px); /* effet de flou */
+}
+fieldset {
+  border: none;
 }

@@ -58,3 +58,17 @@ for (const book of myLibrary) {
   status.textContent = book.read;
   row.appendChild(status);
 }
+
+// DIALOG
+
+const dialog = document.querySelector("dialog");
+const showButton = document.querySelector(".createbook");
+const closeButton = document.querySelector(".closedialog");
+
+showButton.addEventListener("click", () => {
+  dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+  dialog.close();
+});

@@ -21,5 +21,30 @@
       <tbody></tbody>
     </table>
     <button class="createbook">Add new book</button>
+    <dialog>
+      <h2>Add your new book</h2>
+      <form action="dialog">
+        <p>
+          <label for="title">Title</label>
+          <input name="title" id="title" type="text" />
+        </p>
+        <p>
+          <label for="author">Author</label>
+          <input name="author" type="text" id="author" />
+        </p>
+        <p>
+          <label for="pages">Pages</label>
+          <input type="text" name="pages" id="pages" />
+        </p>
+        <fieldset>
+          <legend>Read ?</legend>
+          <label for="yes">Yes</label>
+          <input type="radio" name="read" value="yes" id="yes" required />
+          <label for="no"> No </label>
+          <input type="radio" name="read" value="no" id="no" />
+        </fieldset>
+      </form>
+      <button class="closedialog" autofocus>Close</button>
+    </dialog>
   </body>
 </html>
