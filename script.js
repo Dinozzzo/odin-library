@@ -17,7 +17,7 @@ function addBooktoLibrary(title, author, pages, read, id) {
 addBooktoLibrary(
   "The Hobbit",
   "J.R.R. Tolkien",
-  "300 pages",
+  "300",
   "Read",
   crypto.randomUUID()
 );
@@ -25,12 +25,12 @@ addBooktoLibrary(
 addBooktoLibrary(
   "Harry Potter",
   "J.K Rowling",
-  "233 pages",
+  "233",
   "Not read",
   crypto.randomUUID()
 );
 
-// CREATION DU TABLEAU
+// CREATION OF TABLE
 
 const tbody = document.querySelector("tbody");
 
@@ -38,22 +38,39 @@ function renderBookRow(book) {
   // ROW
   let row = document.createElement("tr");
   tbody.appendChild(row);
+
   // TITLE
   let title = document.createElement("td");
   title.textContent = book.title;
   row.appendChild(title);
+
   // AUTHOR
   let author = document.createElement("td");
   author.textContent = book.author;
   row.appendChild(author);
+
   // PAGES
   let pages = document.createElement("td");
   pages.textContent = book.pages;
   row.appendChild(pages);
+
   // STATUS
   let status = document.createElement("td");
   status.textContent = book.read;
   row.appendChild(status);
+
+  // ADD DELETE BUTTON
+  const actionCell = document.createElement("td");
+  const erase = document.createElement("button");
+  erase.textContent = "Delete";
+  erase.classList.add("erase-button");
+  actionCell.appendChild(erase);
+  row.appendChild(actionCell);
+
+  // ACTION TO DELETE
+  erase.addEventListener("click", () => {
+    row.remove();
+  });
 }
 
 myLibrary.forEach(renderBookRow);

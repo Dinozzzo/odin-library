@@ -30,7 +30,7 @@ tbody {
 }
 
 tbody tr {
-  height: 40px;
+  height: 50px;
   background: #fff;
   outline: 0.5px solid rgb(188, 188, 188); /* optionnel : arrondis jolis */
   border-radius: 15px;
@@ -46,10 +46,6 @@ tbody tr td:last-child {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
 }
-
-/* tbody tr:nth-child(odd) {
-  background: rgb(237, 237, 237);
-} */
 
 tbody tr:hover {
   background: rgba(186, 221, 255, 0.955);
@@ -155,4 +151,20 @@ fieldset {
 
 .closedialog:hover {
   background-color: rgb(225, 58, 58);
+}
+
+.erase-button {
+  background-color: rgb(225, 58, 58);
+  width: 70px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.erase-button:hover {
+  background-color: rgb(173, 19, 19);
+}
+
+.erase-button:active {
+  background-color: rgb(97, 23, 23);
 }
