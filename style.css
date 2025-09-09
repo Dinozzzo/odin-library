@@ -20,6 +20,7 @@ h1 {
 
 table {
   width: 1000px;
+  table-layout: fixed;
   border-collapse: separate; /* important */
   border-spacing: 0 10px; /* espace vertical entre les lignes */
 }
@@ -31,10 +32,13 @@ tbody {
 
 tbody tr {
   height: 50px;
-  background: #fff;
-  outline: 0.5px solid rgb(188, 188, 188); /* optionnel : arrondis jolis */
+  outline: 0.5px solid rgb(188, 188, 188);
   border-radius: 15px;
-  overflow: hidden; /* pour que le radius s'applique visuellement */
+  overflow: hidden;
+}
+
+tbody td {
+  background: #fff;
 }
 
 tbody tr td:first-child {
@@ -47,8 +51,20 @@ tbody tr td:last-child {
   border-bottom-right-radius: 15px;
 }
 
-tbody tr:hover {
-  background: rgba(186, 221, 255, 0.955);
+thead th:last-child,
+td.actions {
+  width: 125px;
+}
+
+td.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 0 6px;
+  width: 170px;
+  height: 50px;
+  padding-right: 42px;
 }
 
 .createbook {
@@ -63,6 +79,10 @@ tbody tr:hover {
 
 .createbook:hover {
   background-color: rgb(125, 184, 243);
+}
+
+.createbook:active {
+  background-color: rgb(165, 207, 249);
 }
 
 /* DIALOG */
@@ -149,8 +169,16 @@ fieldset {
   background-color: rgb(125, 184, 243);
 }
 
+.validdialog:active {
+  background-color: rgb(165, 207, 249);
+}
+
 .closedialog:hover {
   background-color: rgb(225, 58, 58);
+}
+
+.closedialog:active {
+  background-color: rgb(97, 23, 23);
 }
 
 .erase-button {
@@ -167,4 +195,20 @@ fieldset {
 
 .erase-button:active {
   background-color: rgb(97, 23, 23);
+}
+
+.edit-button {
+  background-color: rgb(213, 213, 213);
+  width: 95px;
+  height: 25px;
+  border-radius: 10px;
+  border: none;
+}
+
+.edit-button:hover {
+  background-color: rgb(125, 184, 243);
+}
+
+.edit-button:active {
+  background-color: rgb(165, 207, 249);
 }

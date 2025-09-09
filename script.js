@@ -59,13 +59,30 @@ function renderBookRow(book) {
   status.textContent = book.read;
   row.appendChild(status);
 
-  // ADD DELETE BUTTON
-  const actionCell = document.createElement("td");
+  // ADD READ EDIT & DELETE BUTTONS
+  const changeStatusCell = document.createElement("td");
+  changeStatusCell.classList.add("actions");
+  const changeStatus = document.createElement("button");
+  changeStatus.textContent = "Edit status";
+
   const erase = document.createElement("button");
   erase.textContent = "Delete";
+
+  changeStatusCell.appendChild(changeStatus);
+  changeStatusCell.appendChild(erase);
+  row.appendChild(changeStatusCell);
   erase.classList.add("erase-button");
-  actionCell.appendChild(erase);
-  row.appendChild(actionCell);
+  changeStatus.classList.add("edit-button");
+
+  // ACTION TO EDIT
+  changeStatus.addEventListener("click", () => {
+    if (book.read === "Read") {
+      book.read = "Not read";
+    } else {
+      book.read = "Read";
+    }
+    status.textContent = book.read;
+  });
 
   // ACTION TO DELETE
   erase.addEventListener("click", () => {
